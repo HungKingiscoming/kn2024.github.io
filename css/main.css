@@ -1,0 +1,847 @@
+*,
+*:before,
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    
+}
+
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+img{
+    max-width: 90%;
+    width: 90%;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+:root{
+    --green: #27ae60;
+	--greenblue: #54B192;
+    --green-l: #A4cec0;
+    --gray: #3F3D56;
+	--black:#444;
+	--light-color:#666;
+	--border:.1rem solid rgba(0,0,0,.1);
+	--border-hover:.1rem solid #444;
+	--box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    --smooth: all .3s ease-in;
+}
+
+button{
+    text-align: center;
+    color: #fff;
+    background-color: var(--gray);
+    padding: .8rem 2.5rem;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: var(--smooth);
+}
+
+button:hover{
+    background-color: var(--green-l);
+    transition: var(--smooth);
+}
+
+/* header */
+header{
+    position: absolute;
+    width: 100%;    
+}
+
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    padding: 20px 0;
+    align-items: center;
+}
+
+/* logo */
+.navbar__logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* menu */
+.navbar__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background-color: var(--gray);
+    z-index: 5;
+    transition: var(--smooth);
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.navbar__links.navbar__open{
+    transform: translateX(0);
+    opacity: 1;
+    transition: var(--smooth);
+}
+
+.navbar__link  {
+    list-style: none;
+    margin: 55px;
+}
+
+.navbar__link  a{
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    transition: var(--smooth);
+    
+}
+
+.navbar__link a:hover{
+    color: var(--green);
+    transition: var(--smooth);
+}
+
+.navbar__btn {
+    font-size: 1rem;
+    background-color: #27ae60;
+    margin-left: 45px;
+}
+
+/* menu button */
+.navbar__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:80px;
+    height: 80px;
+    cursor: pointer;
+    transition: var(--smooth);
+    z-index:6;
+}
+
+.navbar__icon {
+    width:45px;
+    height: 6px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    transition: var(--smooth);
+    position: relative;
+}
+
+.navbar__icon:before,
+.navbar__icon:after {
+    content:"";
+    position: absolute;
+    width: 45px;
+    height: 6px;
+    background-color: var(--gray);
+    border-radius: 5px;
+    transition: var(--smooth);
+}
+
+.navbar__icon:before{
+    transform: translateY(-18px);
+}
+
+.navbar__icon:after{
+    transform: translateY(18px);
+}
+
+
+/* button animation */
+.open .navbar__icon {
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+.open .navbar__icon:before{
+    transform: rotate(45deg) translate(35px, -35px)
+}
+
+.open .navbar__icon:after{
+    transform: rotate(-45deg) translate(35px, 35px)
+}
+
+
+/* banner */
+
+#banner{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.banner__img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.banner__heading{
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--gray);
+    
+
+}
+
+.banner__heading h1{
+    font-size: 2rem;
+    padding-top: 4em;
+    margin-bottom: 0.5em;
+}
+
+.banner__heading p{
+    font-weight: 300;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.banner__btn{
+    font-size: 1em;
+    margin-left: 6rem;
+}
+
+.banner__socials{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    margin-left: 5rem;
+
+}
+
+.banner__socials a{
+    color: var(--gray);
+    transition: var(--smooth);
+}
+
+.banner__socials a:hover{
+    color: var(--green-l);
+    transition: var(--smooth);
+}
+
+/* members */
+#members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+#members .wrapper{
+    background: #fff;
+    width: 580px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 10px 10px 15px rgba(0,0,0, 0.5);
+    
+}
+
+#members .wrapper h2{
+    text-align: center;
+}
+
+hr{
+    width: 100px;
+    margin: 10px auto;
+}
+
+.list__members{
+    display: flex;
+}
+
+#members{
+    margin: 8px;
+}
+
+#members .wrapper .list__members .member img{
+    width: 200px;
+    border-radius: 50%;
+    height: 200px;
+    margin: 10px;
+}
+
+
+#members .wrapper .list__members .member h3,p{
+    text-align: center;
+    font-size: 16px;
+    margin: 7px;
+}
+
+
+#things {
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 9em;
+}
+  
+#things h2 {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 3em;
+}
+
+.things__dec {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-60%);
+    z-index: -1;
+}
+
+.things__dec:nth-child(2) {
+    top: initial;
+    left: initial;
+    bottom: 15%;
+    right: 0;
+    transform: translateX(60%);
+    z-index: -1;
+}
+
+.things__item {
+    margin: 3em 0;
+}
+
+.things__item img {
+    padding-bottom: 4em;
+}
+
+.things__item--heading {
+    text-align: center;
+    color: var(--gray);
+}
+
+.things__item--heading p {
+    font-weight: 300;
+    line-height: 2em;
+    max-width: 300px;
+    margin: 0 auto;
+    padding-top: 1em;
+}
+
+
+
+
+.home{
+	background-position: center;
+	
+}
+
+.home .row{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.home .row .content{
+	flex: 1 1 42rem;
+}
+.home .row .book-slider{
+	flex: 1 1 42rem;
+}
+.home .row .book-slider{
+	
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.home .row .book-slider a img{
+	height: 18rem;
+}
+
+.home .row .book-slider a:hover img{
+	height: 20rem;
+	transform: scale(.9)
+}
+
+.home .row .book-slider .stand{
+	width: 100%;
+	margin-top: -2rem;
+	
+}
+
+.home .row .content h3{
+	color: black;
+	font-size: 4.5rem;
+}
+
+.home .row .content p{
+	color: black;
+	font-size: 1.4rem;
+	line-height: 2;
+	padding: 1rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 62em){
+    .navbar__links{
+        position: initial;
+        transform: translateX(0);
+        opacity: 1;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .navbar__link a{
+        color: var(--gray);
+    }
+    .navbar__icons{
+        display: none;
+    }
+    .navbar__btn{
+        background-color: var(--gray);
+    }
+}
+
+
+@media (min-width: 62em){
+    .banner__heading{
+        text-align: initial;
+        margin: 0;
+        padding-top: 0;        
+    }
+    .banner__socials{
+        justify-content: flex-start;
+    }
+    .banner__socials a{
+        margin-right: 45px;
+    }
+    .banner__img{
+        width: 50%;
+    }
+}
+
+@media (min-width: 62em) {
+    .things__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+    }
+    .things__item img {
+      width: 40%;
+      padding-bottom: 0;
+    }
+    .things__item--heading {
+      width: 45%;
+      text-align: initial;
+    }
+    .things__item--heading p {
+      max-width: 500px;
+      margin: 0;
+    }
+    .things__item:nth-child(odd) img {
+      order: 2;
+      width: 40%;
+      padding-bottom: 0;
+    }
+    .things__item--heading:nth-child(odd) {
+      order: 1;
+      width: 45%;
+      text-align: initial;
+    }
+  }
+
+
+/* === Works === */
+
+#works {
+    padding-top: 10em;
+    padding-bottom: 5em; /* Thêm khoảng trống phía dưới */
+    position: relative;
+    overflow-x: hidden;
+    background-color: #f9f9f9; /* Thêm màu nền nhạt */
+    text-align: center; /* Căn giữa nội dung trong section */
+}
+
+#works h3 {
+    text-align: center;
+    color: var(--gray);
+    font-size: 2.5rem; /* Tăng kích thước chữ */
+    margin-bottom: 2em; /* Thêm khoảng trống dưới tiêu đề */
+    display: inline-block; /* Đảm bảo tiêu đề được coi là một khối để căn giữa */
+}
+
+.works__dec {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-60%);
+    z-index: -1;
+  }
+  .works__dec:nth-child(2) {
+    position: absolute;
+    top: initial;
+    left: initial;
+    bottom: 15%;
+    right: 0;
+    transform: translateX(60%);
+    z-index: -1;
+  }
+  
+
+.works__img--single {
+    margin: 2em 0;
+    padding: 1em; /* Thêm padding để ảnh không sát vào viền */
+    background-color: #fff; /* Thêm màu nền trắng cho khối ảnh */
+    box-shadow: var(--box-shadow); /* Thêm đổ bóng cho khối ảnh */
+    border-radius: 15px; /* Thêm bo tròn góc */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng khi hover */
+}
+
+.works__img--single:hover {
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+.works__img--single:nth-child(odd) {
+    padding-top: 5em;
+}
+
+.works__img--single:nth-child(3) {
+    margin-top: -5em;
+}
+
+.banner__btn {
+    text-align: center;
+    margin-top: 3em;
+    margin-right: 6em;
+}
+
+.banner__btn button {
+    font-size: 1rem;
+    padding: 1em 2em; /* Tăng kích thước padding */
+    border-radius: 50px; /* Bo tròn nút hơn */
+    box-shadow: var(--box-shadow); /* Thêm đổ bóng cho nút */
+}
+
+#works .banner__socials{
+    text-align: center;
+    margin-top: 1em;
+    margin-left: 21em;
+}
+
+@media (min-width: 62em) {
+    #works h2 {
+        margin-bottom: 3em;
+    }
+    .works__img {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2em; /* Thêm khoảng cách giữa các ảnh */
+    }
+    .works__img--single {
+        margin: 0 5em;
+        width: 30%; /* Giảm kích thước để có thêm khoảng trống */
+    }
+    .works__img--single:nth-child(3) {
+        margin-top: 0;
+    }
+}
+
+
+.box {
+    height: 350px;
+    width: 300px;
+    border: 3px solid green; /* Đường viền màu đen */
+    margin: 0 20px; /* Đường viền màu đen */
+    justify-content: space-between;
+    flex-direction: column;
+}
+.content1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+}
+
+.title {
+    height: 50px;
+    border-bottom: 1px solid black; /* Đường viền dưới cho khu vực tiêu đề */
+    text-align: center;
+    line-height: 50px; /* Căn giữa chữ theo chiều dọc */
+    font-weight: bold;
+    font-size: 22px; 
+}
+
+.ability {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Đặt button xuống cuối */
+    flex-grow: 1;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #4CAF50; /* Màu nền cho nút */
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049; /* Màu nền khi hover nút */
+}
+
+.list {
+    margin: 0;
+    padding: 0 0 10px 20px; /* Khoảng cách giữa danh sách và viền */
+    list-style-type: disc; /* Sử dụng ký hiệu đĩa cho các phần tử danh sách */
+    font-size: 18px; /* Tăng cỡ chữ */
+    line-height: 1.6; 
+}
+
+
+
+
+.footer {
+    margin-left: 2rem; /* Di chuyển section sang phải */
+    margin-top: 10rem;
+}
+
+.footer .box-container {
+    font-size: 1.8rem;
+    color: #444;
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem; /* Khoảng cách giữa các box */
+    justify-content: space-between; /* Chia đều không gian giữa các box */
+}
+
+.footer .box-container .box1 {
+    flex: 1; /* Các box1 chiếm không gian bằng nhau */
+    padding: 0 1rem; /* Thêm khoảng cách bên trái và bên phải cho mỗi box1 */
+}
+
+.footer .box-container .box1 h3 {
+    margin-bottom: 0.5rem; /* Giảm khoảng cách dưới tiêu đề để gần hơn với các liên kết */
+}
+
+.footer .box-container .box1 a {
+    display: block;
+    font-size: 1.4rem; /* Đã bỏ khoảng trắng giữa 1.4 và rem */
+    color: #666;
+    padding: 0.5rem 0; /* Giảm khoảng cách trên và dưới của các liên kết */
+}
+
+.footer .box-container .box1 a i {
+    color: #27ae60;
+    padding-right: .5rem;
+}
+
+.footer .box-container .box1 a img {
+    width: 20px; /* Điều chỉnh kích thước ảnh nhỏ hơn */
+    height: 20px;
+    vertical-align: middle; /* Căn giữa ảnh với văn bản */
+}
+
+.footer .share a img {
+    width: 40px; /* Điều chỉnh kích thước ảnh cho phần chia sẻ */
+    height: 40px;
+}
+
+.footer .share a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 .3rem;
+    border-radius: 50%;
+}
+
+.footer .share {
+    text-align: center;
+}
+
+
+.footer1 {
+    margin-left: 2rem; /* Di chuyển section sang phải */
+    
+}
+
+.footer1 .box-container {
+    font-size: 1.8rem;
+    color: #444;
+    padding: 1rem 0;
+    display: flex;
+    gap: 1rem; /* Khoảng cách giữa các box */
+    justify-content: space-between; /* Chia đều không gian giữa các box */
+}
+
+.footer1 .box-container .box1 {
+    flex: 1; /* Các box1 chiếm không gian bằng nhau */
+    padding: 0 1rem; /* Thêm khoảng cách bên trái và bên phải cho mỗi box1 */
+}
+
+.footer1 .box-container .box1 h3 {
+    margin-bottom: 0.5rem; /* Giảm khoảng cách dưới tiêu đề để gần hơn với các liên kết */
+}
+
+.footer1 .box-container .box1 a {
+    display: block;
+    font-size: 1.4rem; /* Đã bỏ khoảng trắng giữa 1.4 và rem */
+    color: #666;
+    padding: 0.5rem 0; /* Giảm khoảng cách trên và dưới của các liên kết */
+}
+
+.footer1 .box-container .box1 a i {
+    color: #27ae60;
+    padding-right: .5rem;
+}
+
+.footer1 .box-container .box1 a img {
+    width: 20px; /* Điều chỉnh kích thước ảnh nhỏ hơn */
+    height: 20px;
+    vertical-align: middle; /* Căn giữa ảnh với văn bản */
+}
+
+.footer1 .share a img {
+    width: 40px; /* Điều chỉnh kích thước ảnh cho phần chia sẻ */
+    height: 40px;
+}
+
+.footer1 .share a {
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 .3rem;
+    border-radius: 50%;
+}
+
+.footer1 .share {
+    text-align: center;
+}
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed; /* Vị trí cố định */
+    z-index: 1000; /* Đặt lên trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 100%; /* Chiếm toàn bộ chiều cao */
+    overflow: auto; /* Cho phép cuộn nếu cần */
+    background-color: rgba(0, 0, 0, 0.5); /* Nền đen với độ trong suốt */
+  }
+  
+.modal-content {
+background-color: #fefefe;
+margin: 10% auto; /* Căn giữa modal từ trên xuống */
+padding: 20px;
+border: 1px solid #888;
+width: 30%; /* Chiều rộng của modal */
+border-radius: 8px;
+}
+
+.close-button {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+color: black;
+text-decoration: none;
+}
+
+.modal-content h2 {
+margin-top: 0;
+}
+
+.modal-content form {
+display: flex;
+flex-direction: column;
+}
+
+.modal-content label {
+margin: 10px 0 5px;
+}
+
+.modal-content input {
+padding: 8px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+
+.modal-content button {
+padding: 10px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.modal-content button:hover {
+background-color: #45a049;
+}
