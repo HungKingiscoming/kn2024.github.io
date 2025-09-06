@@ -75,6 +75,13 @@ header{
     width: 150px;
     height: 150px;
     object-fit: cover;
+	display: flex
+}
+.navbar__title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--gray);
+    max-width: 300px; /* tránh chữ tràn quá dài */
 }
 
 /* menu */
