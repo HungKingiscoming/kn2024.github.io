@@ -73,11 +73,22 @@ header{
 }
 
 /* logo */
+.navbar__logo {
+  display: flex;
+  align-items: center; /* căn giữa theo chiều dọc */
+}
+
 .navbar__logo img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-	display: flex
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 10px; /* tạo khoảng cách giữa logo và chữ */
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
 }
 .navbar__title {
     font-size: 1.2rem;
