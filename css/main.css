@@ -209,7 +209,7 @@ header{
 
 .banner__img{
     position: absolute;
-    top: 0;
+    top:60px ; 
     right: 0;
     z-index: -1;
 }
